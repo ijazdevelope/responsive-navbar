@@ -1,0 +1,137 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+nav {
+  background-color: gray;
+  padding: 5px 20px;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.menu li {
+  font-size: 15px;
+}
+.menu li a {
+  display: block;
+  padding: 15px 5px;
+}
+.logo {
+  font-size: 24px !important;
+  font-weight: bolder;
+}
+
+.btn {
+  width: 150px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  margin: 5px;
+}
+.btn-primay {
+  background-color: cornflowerblue;
+}
+.btn-secondry {
+  border: 2px solid cornflowerblue;
+}
+.btn-secondry a:hover {
+  background-color: #fff;
+  border-radius: 50px;
+  color: cornflowerblue;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bars {
+  height: 2px;
+  width: 20px;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+}
+.bars::after,
+.bars::before {
+  content: "";
+  height: 2px;
+  width: 20px;
+  background-color: #fff;
+  position: absolute;
+  display: inline-block;
+}
+.bars::before {
+  top: 5px;
+}
+.bars::after {
+  top: -5px;
+}
+.toggle {
+  order: 1;
+  cursor: pointer;
+}
+.item.btn {
+  order: 2;
+}
+.item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.active {
+  display: block;
+}
+
+/* Fot Tablet Screen */
+@media all and (min-width: 468px) {
+  .logo {
+    flex: 1;
+  }
+  .menu {
+    justify-content: center;
+  }
+  .item.btn {
+    display: block;
+    width: 150px;
+    order: 1;
+  }
+  .toggle {
+    order: 2;
+  }
+  .item {
+    order: 3;
+  }
+}
+
+/* For the Desktop Screen */
+@media all and (min-width: 768px) {
+  .item {
+    display: block;
+    width: auto;
+    order: 1;
+  }
+  .logo {
+    order: 0;
+  }
+  .toggle {
+    display: none;
+  }
+  .item.btn {
+    order: 3;
+  }
+}
